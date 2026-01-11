@@ -1,4 +1,8 @@
 <x-layouts.app>
+
+    <x-slot:title>Pelita IV School | International School</x-slot:title>
+    <x-slot:description>Pendaftaran Pelita School</x-slot:description>
+
     <x-ui.hero-banner
         img="image/assets/school.jpg"
         title="Pendaftaran, dan admisi"
