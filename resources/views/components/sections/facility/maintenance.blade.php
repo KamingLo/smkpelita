@@ -1,0 +1,34 @@
+<section class="py-24 bg-slate-50 border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h3 class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4">Quality Assurance</h3>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Kenyamanan & Keamanan Prioritas Kami</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Keamanan 24/7</h4>
+                <p class="text-slate-500 text-sm leading-relaxed">Seluruh sudut sekolah terpantau CCTV dan dijaga oleh tim keamanan profesional selama 24 jam.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.628.282a2 2 0 01-1.18.128l-5.471-.812a2 2 0 01-1.147-.537l-.503-.503a2 2 0 00-3.125 0l-.503.503a2 2 0 01-1.147.537l-5.471.812a2 2 0 01-1.18-.128l-.628-.282a6 6 0 00-3.86-.517l-2.387.477a2 2 0 00-1.022.547l-2.428 2.428a2 2 0 000 2.828l2.428 2.428z"/></svg>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Higienitas Terjamin</h4>
+                <p class="text-slate-500 text-sm leading-relaxed">Setiap fasilitas melalui protokol sterilisasi harian untuk menjaga lingkungan belajar tetap sehat.</p>
+            </div>
+
+            <div class="flex flex-col items-center text-center p-8 bg-white rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h4 class="text-xl font-bold text-slate-900 mb-3">Pemeliharaan Rutin</h4>
+                <p class="text-slate-500 text-sm leading-relaxed">Peremajaan alat dan renovasi berkala untuk memastikan sarana tetap mutakhir dan aman digunakan.</p>
+            </div>
+        </div>
+    </div>
+</section>
