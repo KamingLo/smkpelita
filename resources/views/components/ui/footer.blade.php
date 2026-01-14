@@ -47,12 +47,11 @@
             </div>
 
             <div>
-                <h4 class="text-sm font-semibold uppercase tracking-[0.4em] mb-10 text-blue-400">Jenjang</h4>
+                <h4 class="text-sm font-semibold uppercase tracking-[0.4em] mb-10 text-blue-400">Jurusan</h4>
                 <ul class="space-y-5">
-                    @php $jenjang = ['TK Pelita', 'SD Pelita', 'SMP Pelita', 'SMA Pelita', 'SMK Pelita']; @endphp
-                    @foreach($jenjang as $item)
+                    @foreach(['DKV', 'MP', 'AK'] as $item)
                     <li class="group">
-                        <a href="#" class="text-md opacity-60 group-hover:opacity-100 group-hover:text-blue-300 transition-all duration-300 flex items-center gap-4">
+                        <a href="/jurusan" class="text-md opacity-60 group-hover:opacity-100 group-hover:text-blue-300 transition-all duration-300 flex items-center gap-4">
                             <span class="w-0 group-hover:w-5 h-[1.5px] bg-blue-400 transition-all duration-500"></span>
                             {{ $item }}
                         </a>

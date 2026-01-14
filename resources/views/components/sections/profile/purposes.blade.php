@@ -4,20 +4,20 @@
         <div data-aos="fade-right">
             <div class="flex items-center gap-3 mb-6">
                 <div class="w-12 h-[2px] bg-blue-600 rounded-full"></div>
-                <span class="text-blue-600 text-xs font-bold">Future Aspirations</span>
+                <span class="text-blue-600 text-xs font-bold uppercase tracking-widest">Masa Depan Vokasi</span>
             </div>
             
             <h2 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter mb-8">
-                Menjadi Versi Terbaik.
+                Ahli di Bidang, <br><span class="text-blue-600">Santun di Hati.</span>
             </h2>
             
             <p class="text-slate-600 text-xl leading-relaxed mb-10 font-light">
-                Kami percaya setiap anak memiliki panggilan unik. Di sini, murid tidak hanya belajar untuk ujian, tetapi dibentuk untuk memiliki ketajaman intelektual dan kedalaman karakter.
+                SMK Pelita IV berkomitmen menciptakan lingkungan <strong>Sekolah Ramah Anak (SRA)</strong>. Kami percaya bahwa keterampilan teknis akan berkembang maksimal saat siswa merasa aman, dihargai, dan tumbuh tanpa tekanan dalam atmosfer yang penuh kekeluargaan.
             </p>
 
             <div class="bg-white p-8 border-l-8 border-blue-600 shadow-sm rounded-2xl overflow-hidden">
                 <p class="text-slate-800 italic text-lg">
-                    "Harapan kami adalah setiap lulusan melangkah keluar dengan iman yang teguh, ilmu yang mumpuni, dan hati yang siap melayani sesama."
+                    "Tujuan kami bukan sekadar mencetak operator mesin atau ahli komputer, melainkan pribadi yang mandiri secara ekonomi dan memiliki kepekaan nurani terhadap sesama."
                 </p>
             </div>
         </div>
@@ -26,25 +26,25 @@
             @php
                 $outcomes = [
                     [
-                        'tag' => 'Spiritual',
-                        'title' => 'Iman yang Berakar',
-                        'desc' => 'Murid memiliki fondasi rohani yang kuat dan mampu menerapkan nilai kasih dalam kehidupan sehari-hari.'
+                        'tag' => 'Safe Environment',
+                        'title' => 'Sekolah Ramah Anak',
+                        'desc' => 'Menjamin ruang belajar bebas perundungan (anti-bullying) di mana setiap bakat kejuruan diapresiasi dengan kasih.'
                     ],
                     [
-                        'tag' => 'Intellectual',
-                        'title' => 'Pemikiran Kritis',
-                        'desc' => 'Mampu menganalisis tantangan zaman dengan logika yang sehat dan solusi yang inovatif.'
+                        'tag' => 'Professionalism',
+                        'title' => 'Keahlian Teruji',
+                        'desc' => 'Menguasai kompetensi sesuai standar industri melalui praktik nyata yang menantang namun tetap terbimbing.'
                     ],
                     [
-                        'tag' => 'Social',
-                        'title' => 'Kepemimpinan Melayani',
-                        'desc' => 'Menjadi pemimpin yang tidak mencari kuasa, melainkan menginspirasi melalui dedikasi dan empati.'
+                        'tag' => 'Career Ready',
+                        'title' => 'Kesiapan Mandiri',
+                        'desc' => 'Mempersiapkan lulusan yang siap langsung bekerja, melanjutkan kuliah, maupun berwirausaha secara etis.'
                     ]
                 ];
             @endphp
 
             @foreach($outcomes as $item)
-                <div class="group bg-white p-8 rounded-2xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+                <div class="group bg-white p-8 rounded-2xl transition-all duration-500 hover:shadow-xl hover:-translate-y-1 border border-slate-100">
                     <span class="text-blue-500 text-xs font-bold uppercase tracking-widest mb-2 block">
                         {{ $item['tag'] }}
                     </span>

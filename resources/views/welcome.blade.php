@@ -6,7 +6,7 @@
     <x-sections.philosophy />
     <x-sections.stats />
     <livewire:ui.testimonials />
-    <livewire:ui.school-levels />
+    <livewire:ui.vocationals-major />
     <x-sections.cta-admisi />
 
 </x-layouts.app>

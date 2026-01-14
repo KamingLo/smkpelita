@@ -4,7 +4,7 @@
 
     <x-ui.hero-banner
         img="image/assets/dkv.jpg"
-        title="Profil Pelita School"
+        title="Profil SMK PELITA IV"
         desc="Membangun generasi emas dengan kurikulum berbasis industri dan teknologi terkini."
     />
     <x-sections.philosophy />

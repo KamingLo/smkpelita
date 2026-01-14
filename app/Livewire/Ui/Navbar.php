@@ -11,9 +11,11 @@ class Navbar extends Component
 
     public $navItems = [
         'Beranda' => '/',
-        'Jenjang' => '/jenjang',
+        'Jurusan' => '/jurusan',
         'Fasilitas' => '/fasilitas',
         'Admisi' => '/admisi',
+        'Berita' => '/berita',
+        'Pengumuman' => '/pengumuman',
         'Profil' => '/profil',
     ];
 

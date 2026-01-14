@@ -8,33 +8,39 @@ class Faq extends Component
 {
     public $faqs = [
         [
-            'question' => 'Kapan waktu terbaik untuk mendaftarkan ananda?',
-            'answer' => 'Pendaftaran kami dibuka sepanjang tahun, namun kami menyarankan orang tua untuk mendaftar di Gelombang 1 (Oktober-Desember) untuk memastikan ketersediaan kursi dan mendapatkan masa orientasi yang lebih panjang.',
+            'question' => 'Apa saja program keahlian (jurusan) yang tersedia di SMK Pelita IV?',
+            'answer' => 'Kami memiliki program keahlian unggulan yang dirancang sesuai kebutuhan industri saat ini. Untuk detail jurusan yang tersedia dan kurikulumnya, Anda dapat mengunduh katalog jurusan atau berkonsultasi langsung dengan tim PPDB kami.',
             'open' => false
         ],
         [
-            'question' => 'Apakah ada tes masuk untuk calon murid?',
-            'answer' => 'Kami tidak menerapkan "tes" yang menegangkan. Kami menyebutnya "Hari Bermain & Observasi" di mana tim guru akan mengajak ananda berinteraksi untuk memahami kesiapan belajar dan kebutuhan khususnya.',
+            'question' => 'Bagaimana penerapan konsep "Sekolah Ramah Anak" di tingkat SMK?',
+            'answer' => 'Di SMK Pelita IV, kami mengedepankan disiplin positif tanpa kekerasan fisik maupun mental. Kami menciptakan lingkungan bebas perundungan (zero bullying) di mana hubungan antara guru (sebagai mentor) dan siswa dibangun di atas rasa saling menghargai untuk mendukung kesehatan mental siswa selama belajar.',
             'open' => false
         ],
         [
-            'question' => 'Bagaimana jika ananda belum lancar membaca atau menulis?',
-            'answer' => 'Jangan khawatir. Di Pelita IV, kami menghargai kecepatan belajar setiap anak yang berbeda-beda. Tugas kami adalah mendampingi mereka hingga mampu menguasai keterampilan tersebut dengan cara yang menyenangkan.',
+            'question' => 'Apakah lulusan SMK Pelita IV langsung disalurkan bekerja?',
+            'answer' => 'Ya, kami memiliki unit BKK (Bursa Kerja Khusus) yang bekerja sama dengan berbagai mitra industri. Siswa diberikan pelatihan persiapan kerja, info lowongan eksklusif, serta pendampingan bagi yang ingin berwirausaha atau melanjutkan ke perguruan tinggi.',
             'open' => false
         ],
         [
-            'question' => 'Apakah sekolah menyediakan layanan jemputan atau katering?',
-            'answer' => 'Ya, kami bekerja sama dengan mitra terpercaya untuk menyediakan layanan jemputan yang aman dan katering sehat dengan menu yang disesuaikan untuk gizi pertumbuhan anak.',
+            'question' => 'Bagaimana dengan kegiatan Praktik Kerja Lapangan (PKL)?',
+            'answer' => 'Kegiatan PKL dilakukan di perusahaan mitra yang telah terverifikasi keamanannya. Kami memastikan tempat praktik tidak hanya memberikan ilmu teknis, tetapi juga lingkungan kerja yang sehat dan melindungi hak-hak siswa sebagai peserta didik.',
+            'open' => false
+        ],
+        [
+            'question' => 'Apakah siswa diperbolehkan mengikuti ekstrakurikuler di luar jam praktik?',
+            'answer' => 'Tentu. Kami sangat mendukung pengembangan potensi non-akademik. Tersedia berbagai ekstrakurikuler mulai dari olahraga, seni, hingga komunitas teknologi untuk menyeimbangkan antara keterampilan teknis dan kebahagiaan sosial siswa.',
             'open' => false
         ]
     ];
 
-    // app/Livewire/Ui/Faq.php
     public function toggle($index)
     {
-        // Opsional: Tutup FAQ lain saat satu dibuka (Mode Single Accordion)
+        // Menutup FAQ lain saat satu dibuka (Mode Single Accordion)
         foreach ($this->faqs as $key => $faq) {
-            if ($key !== $index) $this->faqs[$key]['open'] = false;
+            if ($key !== $index) {
+                $this->faqs[$key]['open'] = false;
+            }
         }
 
         $this->faqs[$index]['open'] = !$this->faqs[$index]['open'];
