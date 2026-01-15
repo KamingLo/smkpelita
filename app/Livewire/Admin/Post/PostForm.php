@@ -61,7 +61,7 @@ class PostForm extends Component
             'slug'  => 'required|unique:posts,slug,' . ($this->postId ?? 'NULL'),
             'type'  => 'required|in:berita,pengumuman',
             'content' => 'required',
-            'thumbnail' => $this->isEdit ? 'nullable|mimetypes:image/webp|max:2048' : 'required|mimetypes:image/webp|max:2048',
+            'thumbnail' => $this->isEdit ? 'nullable|image|max:2048' : 'required|image|max:2048',
         ];
 
         $this->validate($rules);

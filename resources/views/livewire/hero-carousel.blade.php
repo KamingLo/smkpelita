@@ -18,7 +18,7 @@
                     >
                 </div>
 
-                <div class="absolute inset-0 z-10 bg-gradient-to-r from-blue-900/90 via-blue-900/40 to-transparent flex items-center px-6 md:px-24">
+                <div class="absolute inset-0 z-10 bg-gradient-to-r from-blue-900/30 via-blue-900/40 to-transparent flex items-center px-6 md:px-24">
                     <div class="max-w-4xl" wire:transition.fade>
                         <h1 class="text-white text-5xl md:text-8xl font-bold mb-6 tracking-tighter">
                             {{ $slide['title'] }}
