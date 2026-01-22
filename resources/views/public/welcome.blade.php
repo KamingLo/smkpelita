@@ -5,8 +5,14 @@
     <x-sections.hero />
     <x-sections.philosophy />
     <x-sections.stats />
+    <x-ui.blog.post 
+        :posts="$posts" 
+        title="Berita & Pengumuman Terbaru" 
+        subtitle="Update Pelita IV" 
+    />
     <livewire:ui.testimonials />
     <livewire:ui.vocationals-major />
     <x-sections.cta-admisi />
+
 
 </x-layouts.app>

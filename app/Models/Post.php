@@ -19,6 +19,15 @@ class Post extends Model
         'meta_keywords',
     ];
 
+    public function getUrlAttribute()
+    {
+        // Sesuaikan prefix 'berita' atau 'pengumuman' berdasarkan field 'type'
+        $prefix = $this->type === 'berita' ? 'berita' : 'pengumuman';
+        
+        // Pastikan Anda sudah memiliki route yang sesuai di web.php
+        return url("/{$prefix}/{$this->slug}");
+    }
+
     // Opsional: Untuk statistik mingguan nanti
     public function views()
     {

@@ -14,7 +14,7 @@
         >
     </div>
 
-    <div class="absolute inset-0 z-10 bg-slate-900/60 flex items-center justify-center px-6 text-center">
+    <div class="absolute inset-0 z-10 bg-blue-200/20 flex items-center justify-center px-6 text-center">
         <div class="max-w-5xl">
             @if($title)
                 <h1 class="text-white text-5xl md:text-8xl font-bold mb-6 tracking-tighter fade-in-up">

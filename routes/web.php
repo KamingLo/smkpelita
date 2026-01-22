@@ -7,21 +7,26 @@ use App\Livewire\Admin\Post\PostForm;
 use App\Livewire\Admin\Tool\WebpConverter;
 use App\Livewire\Admin\User\CreateUser;
 use App\Livewire\Admin\Profile\UpdateProfile;
-use App\Http\Controllers\Public\BlogController;
-use App\Http\Controllers\Public\DepartmentController;
-use Illuminate\Support\Facades\Mail;
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\VerifyController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\Public\BlogController;
+use App\Http\Controllers\Public\DepartmentController;
 
-Route::get('/verify-email', [VerifyController::class, 'verify'])->name('verify.email');
+use Illuminate\Support\Facades\Mail;
 
-Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/password-reset', [ForgotPasswordController::class, 'updatePassword'])->name('password.update.process');
+use App\Models\Post;
+
 Route::get('/', function () {
-    return view('public.welcome');
+    $posts = Post::latest()->paginate(6);
+    
+    return view('public.welcome', compact('posts'));
 });
 
+Route::get('/verify-email', [VerifyController::class, 'verify'])->name('verify.email');
+Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/password-reset', [ForgotPasswordController::class, 'updatePassword'])->name('password.update.process');
 Route::get('/profil', function(){
     return view('public.profile');
 });
@@ -53,9 +58,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/postingan', PostIndex::class)->name('posts.index');
     Route::get('/postingan/create', PostForm::class)->name('posts.create');
@@ -71,7 +74,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         return redirect('/login');
     })->name('logout');
 });
-
 
 Route::fallback(function () {
     return view('errors.404'); // Mengarah ke file custom error Anda

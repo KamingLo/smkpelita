@@ -11,25 +11,24 @@ class HeroCarousel extends Component
 
     public function mount()
     {
-        // Data ini nantinya bisa Anda ambil dari Database (misal: Slide::all())
         $this->slides = [
             [
                 'id' => 1,
-                'title' => 'Excellence in Education',
-                'desc' => 'Membentuk pemimpin masa depan melalui standar akademik global terbaik.',
-                'img' => 'image/assets/kurikulum.jpg'
+                'title' => 'Pengembangan Karakter Siswa',
+                'desc' => 'Membentuk pribadi yang disiplin, berintegritas, dan siap menjadi pemimpin di lingkungan profesional.',
+                'img' => 'image/assets/students/pelita-student-1.webp'
             ],
             [
                 'id' => 2,
-                'title' => 'Holistic Development',
-                'desc' => 'Fokus pada pembentukan karakter, kreativitas, dan empati sosial.',
-                'img' => 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070'
+                'title' => 'Penguasaan Teknologi Mutakhir',
+                'desc' => 'Implementasi kurikulum berbasis industri untuk memastikan kesiapan siswa menghadapi tantangan digital global.',
+                'img' => 'image/assets/students/pelita-student-2.webp'
             ],
             [
                 'id' => 3,
-                'title' => 'Modern Learning Space',
-                'desc' => 'Fasilitas mutakhir untuk mendukung teknologi dan seni.',
-                'img' => 'image/assets/dkv.jpg'
+                'title' => 'Pusat Literasi dan Riset',
+                'desc' => 'Menyediakan akses informasi komprehensif untuk mendukung pencapaian akademik dan perluasan wawasan intelektual siswa.',
+                'img' => 'image/assets/students/pelita-student-3.webp'
             ]
         ];
     }
