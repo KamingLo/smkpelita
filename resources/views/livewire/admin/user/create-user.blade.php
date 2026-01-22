@@ -1,7 +1,7 @@
 <div class="max-w-7xl mx-auto p-6">
     <div class="mb-8">
         <h1 class="text-2xl font-semibold text-gray-900 leading-tight">Manajemen User</h1>
-        <p class="text-sm text-gray-500 mt-1">Kelola akses admin dan petugas dalam satu panel kontrol.</p>
+        <p class="text-sm text-gray-500 mt-1">Kelola akses admin dan petugas. Data user baru akan tersimpan setelah mereka melakukan verifikasi email.</p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -9,7 +9,8 @@
         <div class="lg:col-span-4">
             <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                 <div class="p-6">
-                    <h3 class="text-sm font-semibold text-gray-900 mb-5 text-blue-600">Tambah Akun Baru</h3>
+                    <h3 class="text-sm font-semibold text-gray-900 mb-2 text-blue-600">Undang User Baru</h3>
+                    <p class="text-xs text-gray-400 mb-5">Sistem akan membuatkan password otomatis dan mengirimkan link verifikasi.</p>
                     
                     <form wire:submit="save" class="space-y-4">
                         @if (session()->has('success'))
@@ -33,30 +34,29 @@
                             @error('email') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
                         </div>
 
-                        <div class="space-y-4 pt-1">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                                <input wire:model="password" type="password" placeholder="Minimal 8 karakter"
-                                    class="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all text-gray-800">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password</label>
-                                <input wire:model="password_confirmation" type="password" placeholder="Ulangi password"
-                                    class="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all text-gray-800">
+                        <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                            <div class="flex">
+                                <svg class="w-4 h-4 text-blue-500 mt-0.5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <p class="text-[11px] text-blue-700 leading-relaxed">
+                                    Data <strong>tidak akan</strong> disimpan ke database sampai email diverifikasi oleh yang bersangkutan.
+                                </p>
                             </div>
                         </div>
-                        @error('password') <span class="text-red-500 text-xs mt-1 block font-medium">{{ $message }}</span> @enderror
 
                         <button type="submit" 
                             wire:loading.attr="disabled"
                             class="w-full mt-2 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white text-sm font-semibold rounded-lg transition-all shadow-sm flex items-center justify-center relative overflow-hidden">
                             
-                            <div wire:loading wire:target="save" class="items-center justify-center space-x-2">
-                                <span>Menyimpan...</span>
+                            <div wire:loading wire:target="save" class="flex items-center space-x-2">
+                                <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>Mengirim Undangan...</span>
                             </div>
 
                             <span wire:loading.remove wire:target="save">
-                                Daftarkan User
+                                Kirim Undangan Verifikasi
                             </span>
                         </button>
                     </form>
@@ -66,7 +66,7 @@
 
         <div class="lg:col-span-8 space-y-4">
             <div class="relative group">
-                <input wire:model.live="search" type="text" placeholder="Cari berdasarkan nama atau email..." 
+                <input wire:model.live="search" type="text" placeholder="Cari user terdaftar..." 
                     class="w-full pl-11 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-sm">
                 <div class="absolute left-4 top-3 text-gray-400 group-focus-within:text-blue-500 transition-colors">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2" stroke-linecap="round"></path></svg>

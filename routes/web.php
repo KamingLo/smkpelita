@@ -6,7 +6,37 @@ use App\Livewire\Admin\Post\PostIndex;
 use App\Livewire\Admin\Post\PostForm;
 use App\Livewire\Admin\Tool\WebpConverter;
 use App\Livewire\Admin\User\CreateUser;
+use App\Livewire\Admin\Profile\UpdateProfile;
 use App\Http\Controllers\Public\BlogController;
+use App\Http\Controllers\Public\DepartmentController;
+use Illuminate\Support\Facades\Mail;
+
+use App\Http\Controllers\VerifyController;
+use App\Http\Controllers\ForgotPasswordController;
+
+Route::get('/verify-email', [VerifyController::class, 'verify'])->name('verify.email');
+
+Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/password-reset', [ForgotPasswordController::class, 'updatePassword'])->name('password.update.process');
+Route::get('/', function () {
+    return view('public.welcome');
+});
+
+Route::get('/profil', function(){
+    return view('public.profile');
+});
+
+Route::get('/admisi', function(){
+    return view('public.admissions');
+});
+
+Route::get('/jurusan', function(){
+    return view('public.school-major');
+});
+
+Route::get('/fasilitas', function(){
+    return view('public.facility');
+});
 
 Route::get('/berita', [BlogController::class, 'index'])->name('public.berita.index');
 Route::get('/berita/{slug}', [BlogController::class, 'show'])->name('public.berita.show');
@@ -14,25 +44,7 @@ Route::get('/berita/{slug}', [BlogController::class, 'show'])->name('public.beri
 Route::get('/pengumuman', [BlogController::class, 'index'])->name('public.pengumuman.index');
 Route::get('/pengumuman/{slug}', [BlogController::class, 'show'])->name('public.pengumuman.show');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/profil', function(){
-    return view('profile');
-});
-
-Route::get('/admisi', function(){
-    return view('admissions');
-});
-
-Route::get('/jurusan', function(){
-    return view('school-major');
-});
-
-Route::get('/fasilitas', function(){
-    return view('facility');
-});
+Route::get('/jurusan/{slug}', [DepartmentController::class, 'show'])->name('public.department.show');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', function(){
@@ -51,6 +63,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/converter', WebpConverter::class)->name('tools.converter');
     Route::get('/user', CreateUser::class)->name('users.create');
     
+    Route::get('/user/profile', UpdateProfile::class)->name('users.profile');
     Route::post('/logout', function () {
     auth()->logout();
         request()->session()->invalidate();

@@ -98,7 +98,7 @@
                             <div class="flex flex-col sm:flex-row items-center gap-6 pt-8 border-t border-slate-100">
                                 <a href="{{ $major['url'] }}" 
                                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-sm transition-all duration-300 hover:bg-blue-600 group">
-                                    <span>Detail Kurikulum</span>
+                                    <span>Detail Jurusan</span>
                                     <svg class="w-5 h-5 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                                 </a>
                                 <span class="text-xs text-slate-400 font-medium italic text-center sm:text-left">

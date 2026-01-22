@@ -18,7 +18,7 @@ class VocationalsMajor extends Component
             'features' => ['Studio Foto', 'Lab Komputer High-End', 'Sertifikasi Adobe'],
             'career_paths' => ['Graphic Designer', 'UI/UX Designer', 'Photographer'],
             'stats' => ['Siswa' => '320+', 'Mitra' => '25+', 'Lulus Kerja' => '92%'],
-            'url' => '#'
+            'url' => '/jurusan/desain-komunikasi-visual'
         ],
         [
             'alias' => 'MP',
@@ -29,7 +29,7 @@ class VocationalsMajor extends Component
             'features' => ['Lab Perkantoran', 'Simulasi Bisnis', 'Public Speaking'],
             'career_paths' => ['Administrative Assistant', 'HR Staff', 'Secretary'],
             'stats' => ['Siswa' => '280+', 'Mitra' => '18+', 'Lulus Kerja' => '88%'],
-            'url' => '#'
+            'url' => '/jurusan/manajemen-perkantoran'
         ],
         [
             'alias' => 'AKL',
@@ -40,7 +40,7 @@ class VocationalsMajor extends Component
             'features' => ['Software MYOB/Zahir', 'Bank Mini', 'Audit Keuangan'],
             'career_paths' => ['Accountant', 'Tax Consultant', 'Bank Teller'],
             'stats' => ['Siswa' => '250+', 'Mitra' => '15+', 'Lulus Kerja' => '95%'],
-            'url' => '#'
+            'url' => '/jurusan/akuntansi-keuangan'
         ]
     ];
 
