@@ -19,7 +19,7 @@
             <nav class="flex p-1.5 bg-slate-100 rounded-2xl md:rounded-full border border-slate-200 min-w-max">
                 @foreach($vocationalMajors as $index => $major)
                     <button 
-                        @click="activeTab = {{ $index }}; $wire.setTab({{ $index }})"
+                        @click="activeTab = {{ $index }}"
                         class="px-6 md:px-10 py-3 md:py-4 rounded-xl md:rounded-full text-sm md:text-base font-bold transition-all duration-300 outline-none whitespace-nowrap"
                         :class="activeTab === {{ $index }} ? 'bg-white text-blue-600 shadow-sm border border-slate-200' : 'text-slate-400 hover:text-slate-600'">
                         {{ $major['name'] }}
