@@ -7,12 +7,12 @@
             
             <div class="space-y-8">
                 <a href="/" wire:navigate class="flex items-center gap-5 group inline-flex">
-                    <img src="{{ asset('image/logo/logo_pelita.png') }}" 
-                         class="h-16 w-auto transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]">
+                    <img src="{{ asset('image/logo/logo_pelita.webp') }}" 
+                         class="h-16 w-auto">
                     
                     <div class="flex flex-col border-l-2 border-white/30 pl-5 space-y-0.5 transition-colors group-hover:border-white/60">
-                        <span class="text-2xl font-black tracking-[0.2em] leading-none uppercase">PELITA</span>
-                        <span class="text-xs font-bold tracking-[0.3em] text-blue-300 uppercase">Jakarta Barat</span>
+                        <span class="text-2xl font-semibold">SMK Pelita IV</span>
+                        <span class="text-md text-blue-300">Jakarta Barat</span>
                     </div>
                 </a>
                 
@@ -25,19 +25,19 @@
                         <div class="rounded-xl bg-white/10 p-2.5 transition-all duration-300 group-hover:bg-white/20 group-hover:scale-110">
                             <svg class="h-5 w-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                         </div>
-                        <span class="text-sm font-semibold">+62 21 1234 5678</span>
+                        <span class="text-sm font-semibold">+62 216 314 072</span>
                     </div>
                     <div class="group flex items-center gap-4 transition-colors hover:text-blue-300">
                         <div class="rounded-xl bg-white/10 p-2.5 transition-all duration-300 group-hover:bg-white/20 group-hover:scale-110">
                             <svg class="h-5 w-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                         </div>
-                        <span class="text-sm font-medium">info@pelitajakarta.sch.id</span>
+                        <span class="text-sm font-medium">pelitaschool4@gmail.com</span>
                     </div>
                 </div>
             </div>
 
             <div>
-                <h4 class="mb-10 inline-block border-b-2 border-blue-400 pb-2 text-xs font-black uppercase tracking-[0.3em] text-white">Eksplorasi</h4>
+                <h4 class="mb-10 inline-block border-b-2 border-blue-400 pb-2 text-lg font-bold text-white">Eksplorasi</h4>
                 <ul class="space-y-4">
                     @foreach(['Beranda' => '/', 'Profil Sekolah' => '/profil', 'Sarana & Prasarana' => '/sarana', 'Admisi' => '/admisi'] as $label => $url)
                     <li>
@@ -51,7 +51,7 @@
             </div>
 
             <div>
-                <h4 class="mb-10 inline-block border-b-2 border-blue-400 pb-2 text-xs font-black uppercase tracking-[0.3em] text-white">Program Keahlian</h4>
+                <h4 class="mb-10 inline-block border-b-2 border-blue-400 pb-2 text-lg font-bold   text-white">Program Keahlian</h4>
                 @php
                     $listJurusan = [
                         ['slug' => 'desain-komunikasi-visual', 'nama' => 'Desain Komunikasi Visual'],
@@ -72,7 +72,7 @@
             </div>
 
             <div class="space-y-6">
-                <h4 class="mb-4 inline-block border-b-2 border-blue-400 pb-2 text-xs font-black uppercase tracking-[0.3em] text-white">Lokasi Kami</h4>
+                <h4 class="mb-4 inline-block border-b-2 border-blue-400 pb-2 text-lg font-bold text-white">Lokasi Kami</h4>
                 <div class="group relative h-48 overflow-hidden rounded-2xl border-2 border-white/20 shadow-2xl">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.4059977853215!2d106.80084899650618!3d-6.155928998738957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f613397df46d%3A0x46f8864ca14a91e4!2sSmks%20Pelita%20Iv!5e0!3m2!1sen!2sus!4v1769052638915!5m2!1sen!2sus" 
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -86,7 +86,7 @@
             </div>
         </div>
 
-        <div class="mt-20 flex flex-col items-center justify-between gap-6 border-t border-white/20 pt-8 text-xs font-bold uppercase tracking-[0.2em] text-blue-200/80 md:flex-row">
+        <div class="mt-20 flex flex-col items-center justify-between gap-6 border-t border-white/20 pt-8 text-lg text-blue-200/80 md:flex-row">
             <p>© {{ date('Y') }} SMK PELITA. <span class="hidden sm:inline">All rights reserved.</span></p>
             <div class="flex gap-8">
                 <a href="#" class="transition-colors hover:text-white hover:underline">Privacy Policy</a>

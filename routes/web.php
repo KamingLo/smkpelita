@@ -35,10 +35,6 @@ Route::get('/admisi', function(){
     return view('public.admissions');
 });
 
-Route::get('/jurusan', function(){
-    return view('public.school-major');
-});
-
 Route::get('/fasilitas', function(){
     return view('public.facility');
 });

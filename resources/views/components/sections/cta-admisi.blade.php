@@ -1,54 +1,60 @@
-<section id="admission" class="py-24 bg-white px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="relative bg-blue-950 rounded-[3rem] overflow-hidden shadow-2xl">
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-400/10 rounded-full ml-20 mb-20 blur-2xl"></div>
-            <div class="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 rounded-full -mr-10 -mt-10 blur-xl"></div>
+<section id="admission" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="relative bg-blue-50 rounded-3xl overflow-hidden border border-blue-100 shadow-sm">
 
-            <div class="relative z-10 grid lg:grid-cols-2 gap-12 p-8 md:p-16 lg:p-20 items-center">
-                
-                <div data-aos="fade-right">
-                    <span class="inline-block px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                        Penerimaan Siswa Baru {{ date('Y') }}/{{ date('Y') + 1 }}
+            <div class="relative z-10 grid lg:grid-cols-12 gap-8 p-8 md:p-16 lg:p-20 items-stretch"> <div class="lg:col-span-8" data-aos="fade-right">
+                    <span class="inline-block text-blue-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-6">
+                        Penerimaan Peserta Didik Baru {{ date('Y') }}/{{ date('Y') + 1 }}
                     </span>
-                    <h2 class="text-white text-4xl md:text-6xl font-bold tracking-tighter mb-6 leading-[1.1]">
-                        Ingin Tahu Cara <br> Mendaftar?
+                    <h2 class="text-slate-900 text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
+                        Bergabung Menjadi <br>
+                        <span class="text-blue-600">Profesional Masa Depan.</span>
                     </h2>
-                    <p class="text-blue-100/80 text-lg md:text-xl font-light leading-relaxed mb-8">
-                        Kami telah menyiapkan panduan lengkap mengenai prosedur pendaftaran, jadwal observasi, hingga rincian persyaratan untuk mempermudah langkah Anda bergabung bersama keluarga besar Pelita IV.
+                    <p class="text-slate-600 text-lg md:text-xl font-normal leading-relaxed mb-10 max-w-xl">
+                        Mulai langkah perjalanan karier Anda bersama SMK Pelita IV. Dapatkan akses panduan lengkap mengenai prosedur pendaftaran, jadwal seleksi, hingga rincian persyaratan administrasi.
                     </p>
                     
-                    <div class="space-y-4 mb-8 md:mb-0">
-                        <div class="flex items-center text-blue-200">
-                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 text-slate-700">
+                            <div class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
                             </div>
-                            <span class="text-sm md:text-base">Panduan Lengkap Alur Pendaftaran</span>
+                            <span class="text-md font-medium">Panduan Alur Pendaftaran</span>
                         </div>
-                        <div class="flex items-center text-blue-200">
-                            <div class="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-3">
-                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+
+                        <div class="flex items-center gap-3 text-slate-700">
+                            <div class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
                             </div>
-                            <span class="text-sm md:text-base">Konsultasi Personal Tim Admisi</span>
+                            <span class="text-md font-medium">Konsultasi Personal</span>
                         </div>
                     </div>
                 </div>
 
-                <div data-aos="fade-left" data-aos-delay="200">
-                    <a href="/admisi" wire:navigate class="group block relative bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-blue-500/20">
-
-                        <h3 class="text-3xl font-bold text-slate-900 mb-2">Informasi Admisi</h3>
-                        <p class="text-slate-500 mb-8 font-light">Lihat prosedur pendaftaran dan rincian biaya selengkapnya di sini.</p>
+                <div class="lg:col-span-4 flex items-center" data-aos="fade-left">
+                    <a href="/admisi" wire:navigate class="group block relative bg-white p-8 md:p-10 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-200/50 w-full border border-slate-100">
+                        <div class="mb-10">
+                            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">Pusat Informasi Admisi</h3>
+                            <p class="text-slate-500 text-base leading-relaxed">
+                                Temukan rincian biaya pendidikan, kalender pendaftaran, dan fasilitas beasiswa yang tersedia secara lengkap.
+                            </p>
+                        </div>
                         
-                        <div class="flex items-center justify-between bg-slate-50 p-6 rounded-2xl border border-slate-100 group-hover:border-blue-200 group-hover:bg-blue-50/30 transition-all duration-500">
-                            <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Pelajari Selengkapnya</span>
-                            <div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div class="flex items-center justify-between bg-blue-600 p-5 rounded-xl border border-blue-700 group-hover:bg-blue-700 transition-all duration-500 shadow-lg shadow-blue-200">
+                            <span class="text-white font-bold uppercase tracking-widest text-xs">Cek Persyaratan</span>
+                            <div class="w-10 h-10 bg-white/20 text-white rounded-full flex items-center justify-center group-hover:translate-x-2 transition-transform backdrop-blur-sm">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                             </div>
                         </div>
 
-                        <div class="mt-8 flex items-center justify-center space-x-2 text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold">
-                            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                            <span>Konsultasi Online Tersedia</span>
+                        <div class="mt-8 flex items-center justify-center gap-3 text-md text-slate-500">
+                            <span class="flex h-3 w-3 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                            </span>
+                            <span>Layanan Informasi Dibuka</span>
                         </div>
                     </a>
                 </div>

@@ -1,85 +1,99 @@
-<section class="py-24 px-6 bg-slate-50 overflow-hidden">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-        
-        <div data-aos="fade-right">
-            <span class="text-blue-500 font-bold tracking-widest uppercase text-sm">Testimoni</span>
-            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mt-4 mb-8 leading-tight tracking-tighter">
-                Apa yang Dikatakan <br> Komunitas Kami?
-            </h2>
-            <p class="text-lg text-slate-600 mb-8 font-light leading-relaxed">
-                Dengarkan langsung pengalaman berharga dari para orang tua dan alumni...
-            </p>
+<section class="py-24 px-6 bg-[#fcfcfc]" 
+    x-data="{ 
+        active: @entangle('active'), 
+        count: {{ count($testimonials) }},
+        isUserInteracting: false,
+        timer: null,
+        init() {
+            this.startTimer();
             
-            <div class="flex items-center space-x-4">
-                <div class="flex -space-x-2">
-                    <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/100?u=1">
-                    <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/100?u=2">
-                    <img class="w-10 h-10 rounded-full border-2 border-white shadow" src="https://i.pravatar.cc/100?u=3">
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.active = parseInt(entry.target.getAttribute('data-index'));
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            this.$refs.container.querySelectorAll('[data-index]').forEach(el => observer.observe(el));
+        },
+        startTimer() {
+            this.timer = setInterval(() => {
+                if(!this.isUserInteracting) {
+                    let next = (this.active + 1) % this.count;
+                    this.scrollToIndex(next);
+                }
+            }, 5000);
+        },
+        scrollToIndex(idx) {
+            this.$refs.container.scrollTo({
+                left: this.$refs.container.offsetWidth * idx,
+                behavior: 'smooth'
+            });
+        }
+    }"
+>
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 items-center">
+        
+        <div class="lg:col-span-8">
+            <div class="space-y-6 mb-8">
+                <h2 class="text-5xl lg:text-7xl text-slate-900">
+                    Cerita Nyata <br> <span class="font-medium text-blue-600">Keluarga Kami.</span>
+                </h2>
+                <p class="text-xl text-slate-500 leading-relaxed max-w-xl">
+                    Dengarkan pengalaman langsung mengenai perjalanan mereka tumbuh dan berkembang bersama komunitas kami.
+                </p>
+            </div>
+
+            <div class="max-w-md mb-16">
+                <div class="w-full h-[1px] bg-slate-200 relative">
+                    <div class="absolute h-full bg-blue-600 transition-all duration-700 ease-out"
+                         :style="`width: ${((active + 1) / count) * 100}%` "></div>
                 </div>
-                <span class="text-sm font-semibold text-slate-700">500+ Testimoni Positif</span>
             </div>
         </div>
 
-        <div class="relative" 
-             x-data="{ 
-                active: 0,
-                count: {{ count($testimonials) }},
-                skip: 1,
-                init() {
-                    // Auto play di sisi client (lebih smooth)
-                    setInterval(() => {
-                        this.active = (this.active + 1) % this.count;
-                        this.scrollToActive();
-                    }, 5000);
-                },
-                scrollToActive() {
-                    const container = this.$refs.container;
-                    const cardWidth = container.firstElementChild.offsetWidth;
-                    container.scrollTo({ left: cardWidth * this.active, behavior: 'smooth' });
-                }
-             }" 
-             data-aos="fade-left">
-            
-            <div class="absolute -inset-4 bg-blue-100 rounded-[3rem] -rotate-3 opacity-50"></div>
-            
-            <div x-ref="container"
-                 wire:ignore
-                 @scroll.debounce.150ms="active = Math.round($el.scrollLeft / $el.firstElementChild.offsetWidth)"
-                 class="relative flex overflow-x-auto snap-x snap-mandatory no-scrollbar space-x-4 pb-4">
-                
-                @foreach($testimonials as $index => $item)
-                <div class="min-w-full snap-center snap-always" wire:key="testi-{{ $index }}">
-                    <div class="relative aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white bg-slate-200">
-                        <img src="{{ $item['image'] }}" class="absolute inset-0 w-full h-full object-cover" alt="{{ $item['name'] }}">
+        <div class="lg:col-span-4 relative">
+            <div class="relative mx-auto lg:ml-auto"> <div x-ref="container"
+                     @mousedown="isUserInteracting = true"
+                     @mouseup="isUserInteracting = false"
+                     @touchstart="isUserInteracting = true"
+                     @touchend="isUserInteracting = false"
+                     class="relative flex overflow-x-auto snap-x snap-mandatory no-scrollbar rounded-[2.5rem] shadow-2xl aspect-[3/4] bg-slate-200"
+                     style="scroll-behavior: smooth;">
+                    
+                    @foreach($testimonials as $index => $item)
+                    <div data-index="{{ $index }}" class="min-w-full snap-center relative overflow-hidden">
+                        <img src="{{ $item['image'] }}" class="absolute inset-0 w-full h-full object-cover">
                         
-                        <div class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/10 to-transparent"></div>
-                        
-                        <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end text-white">
-                            <p class="text-lg md:text-xl italic font-light mb-6 line-clamp-4 leading-relaxed">
-                                "{{ $item['quote'] }}"
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                            <p class="text-lg md:text-xl font-light leading-relaxed mb-6 italic opacity-90">
+                                “{{ $item['quote'] }}”
                             </p>
-                            <div>
-                                <h4 class="font-bold text-xl tracking-tight">{{ $item['name'] }}</h4>
-                                <span class="text-blue-300 text-xs uppercase tracking-widest font-bold">{{ $item['role'] }}</span>
+                            
+                            <div class="flex flex-col border-l-2 border-blue-500 pl-4">
+                                <h4 class="font-bold text-lg tracking-tight">{{ $item['name'] }}</h4>
+                                <p class="text-[10px] text-blue-300 uppercase tracking-widest mt-1">{{ $item['role'] }}</p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
-            </div>
 
-            <div class="flex justify-center mt-8 space-x-3">
-                @foreach($testimonials as $index => $item)
-                <button @click="active = {{ $index }}; scrollToActive()" 
-                        class="h-2 transition-all duration-500 rounded-full focus:outline-none"
-                        :class="active === {{ $index }} ? 'bg-blue-600 w-10' : 'bg-blue-200 w-2 hover:bg-blue-300'"></button>
-                @endforeach
+                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                    @foreach($testimonials as $index => $item)
+                    <button @click="scrollToIndex({{ $index }})" 
+                            class="h-1 transition-all duration-500 rounded-full"
+                            :class="active === {{ $index }} ? 'w-8 bg-blue-600' : 'w-2 bg-slate-300'"></button>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
-    
+
     <style>
-        /* Utilitas untuk menyembunyikan scrollbar */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>

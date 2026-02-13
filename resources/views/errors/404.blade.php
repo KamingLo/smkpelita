@@ -2,11 +2,11 @@
     <x-slot:title>Pelita IV School | Halaman Tidak Ditemukan</x-slot:title>
     <x-slot:description>Halaman 404 - Pelita School</x-slot:description>
     
-    <x-ui.hero-banner
-        img="image/assets/school.jpg"
-        title="Halamannya tidak ada :(" 
-        desc="Sepertinya Anda tersesat. Rute yang Anda tuju tidak terdaftar di sistem kami."    
-    >
+        <x-ui.hero-banner
+            img="image/assets/school.jpg"
+            title="Halaman tidak ada :(" 
+            desc="Sepertinya Anda tersesat. Rute yang Anda tuju tidak terdaftar di sistem kami."    
+        >
         {{-- Menambahkan Button di bawah Deskripsi --}}
         <div class="mt-8">
             <a href="{{ url('/') }}" 

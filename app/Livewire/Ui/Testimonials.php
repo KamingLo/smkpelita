@@ -8,24 +8,24 @@ class Testimonials extends Component
 {
     public int $active = 0;
 
-    public array $testimonials = [
+    public $testimonials = [
         [
-            'name' => 'Budi Santoso',
-            'role' => 'Orang Tua Murid Kelas 4',
-            'quote' => 'Kurikulum di Pelita IV sangat membantu anak saya berkembang tidak hanya secara akademik, tapi juga karakter.',
-            'image' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000'
+            'name' => 'Jason Angelo',
+            'role' => 'Alumni SMK Pelita IV',
+            'quote' => 'Kurikulum di Pelita IV sangat membantu saya berkembang dalam berbagai aspek, termasuk akademik dan non-akademis.',
+            'image' => 'image/assets/testimonials/Jason.webp'
         ],
         [
-            'name' => 'Siti Aminah',
-            'role' => 'Orang Tua Murid TK B',
-            'quote' => 'Fasilitasnya sangat lengkap dan lingkungannya sangat aman. Guru-gurunya sangat sabar dalam mendampingi tumbuh kembang anak.',
-            'image' => 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000'
+            'name' => 'Vanessia',
+            'role' => 'Murid SMK Pelita IV',
+            'quote' => 'Fasilitas yang lengkap menjadikan pelajaran menjadi lebih menyenangkan dan saya merasa aman untuk berinteraksi dengan guru-guru.',
+            'image' => 'image/assets/testimonials/Vanessia.webp'
         ],
         [
-            'name' => 'Andi Wijaya',
-            'role' => 'Alumni Angkatan 2022',
-            'quote' => 'Berkat bimbingan guru di sini, saya bisa masuk ke universitas impian saya dengan kesiapan mental yang sangat matang.',
-            'image' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000'
+            'name' => 'Maria Fransisca',
+            'role' => 'Orang Tua Murid',
+            'quote' => 'Berdasarkan pengalaman saya, bimbingan guru di Pelita IV sangat membantu saya mengarahkan anak saya untuk mencapai tujuan akademiknya.',
+            'image' => 'image/assets/testimonials/Fransisca.webp'
         ],
     ];
 

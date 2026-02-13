@@ -8,18 +8,18 @@ class FacilityGallery extends Component
     public $activeCategory = 'Semua';
 
     public array $facilities = [
-            ['title' => 'Smart Classroom A', 'cat' => 'Akademik', 'desc' => 'Ruang kelas dengan papan tulis interaktif.', 'img' => 'https://picsum.photos/800/600?random=1'],
-            ['title' => 'Laboratorium Biologi', 'cat' => 'Akademik', 'desc' => 'Fasilitas penelitian mikroskopis modern.', 'img' => 'https://picsum.photos/800/600?random=2'],
-            ['title' => 'Perpustakaan Digital', 'cat' => 'Akademik', 'desc' => 'Akses ke ribuan e-book dan jurnal internasional.', 'img' => 'https://picsum.photos/800/600?random=3'],
-            ['title' => 'Lapangan Basket Indoor', 'cat' => 'Olahraga', 'desc' => 'Lapangan standar FIBA dengan lantai kayu.', 'img' => 'https://picsum.photos/800/600?random=4'],
-            ['title' => 'Kolam Renang Olympic', 'cat' => 'Olahraga', 'desc' => 'Kolam renang air hangat untuk latihan rutin.', 'img' => 'https://picsum.photos/800/600?random=5'],
-            ['title' => 'Gymnasium', 'cat' => 'Olahraga', 'desc' => 'Pusat kebugaran khusus siswa dan staf.', 'img' => 'https://picsum.photos/800/600?random=6'],
-            ['title' => 'Studio Musik', 'cat' => 'Kreativitas', 'desc' => 'Peralatan musik lengkap dan peredam suara.', 'img' => 'https://picsum.photos/800/600?random=7'],
-            ['title' => 'Ruang Seni Lukis', 'cat' => 'Kreativitas', 'desc' => 'Studio luas dengan pencahayaan alami maksimal.', 'img' => 'https://picsum.photos/800/600?random=8'],
-            ['title' => 'Theater Hall', 'cat' => 'Kreativitas', 'desc' => 'Kapasitas 500 orang untuk pertunjukan seni.', 'img' => 'https://picsum.photos/800/600?random=9'],
-            ['title' => 'Kantin Sehat', 'cat' => 'Fasilitas', 'desc' => 'Penyedia makanan bergizi tanpa MSG.', 'img' => 'https://picsum.photos/800/600?random=10'],
-            ['title' => 'Area Bermain (Playground)', 'cat' => 'Fasilitas', 'desc' => 'Wahana bermain aman untuk motorik kasar.', 'img' => 'https://picsum.photos/800/600?random=11'],
-            ['title' => 'Green Garden', 'cat' => 'Fasilitas', 'desc' => 'Area terbuka hijau untuk belajar outdoor.', 'img' => 'https://picsum.photos/800/600?random=12'],
+        ['title' => 'Tempat Pendaftaran', 'cat' => 'Akademik', 'desc' => 'Ruang pendaftaran untuk calon siswa baru.', 'img' => 'image/assets/facility/admisi.webp'],
+        ['title' => 'Laboratorium Komputer', 'cat' => 'Fasilitas', 'desc' => 'Laboratorium dengan komputer modern dan software terkini.', 'img' => 'image/assets/facility/laboratorium-komputer.webp'],
+        ['title' => 'Perpustakaan 1', 'cat' => 'Akademik', 'desc' => 'Koleksi buku lengkap dengan akses digital.', 'img' => 'image/assets/facility/rak-buku.webp'],
+        ['title' => 'Perpustakaan 2', 'cat' => 'Akademik', 'desc' => 'Ruang baca nyaman untuk studi mandiri.', 'img' => 'image/assets/facility/pendaftaran-perpustakaan.webp'],
+        ['title' => 'Koperasi', 'cat' => 'Fasilitas', 'desc' => 'Koperasi sekolah menyediakan kebutuhan siswa.', 'img' => 'image/assets/facility/koperasi.webp'],
+        ['title' => 'Lapangan Olahraga', 'cat' => 'Olahraga', 'desc' => 'Lapangan multi-fungsi untuk berbagai cabang olahraga.', 'img' => 'image/assets/facility/lapangan-olahraga.webp'],
+        ['title' => 'Lapangan Voli', 'cat' => 'Olahraga', 'desc' => 'Lapangan voli standar dengan net dan peralatan lengkap.', 'img' => 'image/assets/facility/lapangan-voli.webp'],
+        ['title' => 'Theater Hall', 'cat' => 'Kreativitas', 'desc' => 'Aula teater kapasitas 500 orang untuk pertunjukan seni.', 'img' => 'https://picsum.photos/800/600?random=9'],
+        ['title' => 'Kantin', 'cat' => 'Fasilitas', 'desc' => 'Kantin menyediakan makanan bergizi tanpa MSG.', 'img' => 'https://picsum.photos/800/600?random=10'],
+        ['title' => 'Tempat Parkir', 'cat' => 'Fasilitas', 'desc' => 'Area parkir luas dan aman untuk kendaraan siswa dan guru.', 'img' => 'image/assets/facility/tempat-parkir.webp'],
+        ['title' => 'Ruangan Kelas', 'cat' => 'Fasilitas', 'desc' => 'Area parkir luas dan aman untuk kendaraan siswa dan guru.', 'img' => 'image/assets/facility/ruangan-kelas.webp'],
+        ['title' => 'Konseling', 'cat' => 'Fasilitas', 'desc' => 'Area parkir luas dan aman untuk kendaraan siswa dan guru.', 'img' => 'image/assets/facility/konseling.webp'],
     ];
 
     public function render()

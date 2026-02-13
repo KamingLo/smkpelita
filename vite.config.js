@@ -13,7 +13,7 @@ export default defineConfig({
     server: {
         host: '0.0.0.0',
         hmr: {
-            host: '192.168.1.5', // Replace with your computer's actual local IP
+            host: '192.168.1.6',// Replace with your computer's actual local IP
         },
         watch: {
             ignored: ['**/storage/framework/views/**'],
