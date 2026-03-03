@@ -93,7 +93,7 @@
          style="display: none;">
         
         <div class="flex items-center gap-4 mb-12 border-b border-white/10 pb-8">
-            <img src="{{ asset('image/logo/logo_pelita.png') }}" class="h-16 md:h-20 w-auto">
+            <img src="{{ asset('image/logo/logo_pelita.webp') }}" class="h-16 md:h-20 w-auto">
             <div class="flex flex-col">
                 <span class="text-2xl md:text-3xl font-bold leading-tight uppercase tracking-tight">SMK Pelita IV</span>
                 <span class="text-sm md:text-lg text-blue-100 opacity-80 uppercase tracking-[0.2em]">Jakarta Barat</span>

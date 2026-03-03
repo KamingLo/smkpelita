@@ -13,19 +13,15 @@ class PostForm extends Component
 {
     use WithFileUploads;
 
-    // Properti Model
     public $postId;
     public $title;
-    public $slug; // WAJIB ada agar muncul di view
+    public $slug;
     public $type = 'berita';
     public $content;
     public $thumbnail;
     public $existingThumbnail;
-    
-    // Properti SEO
     public $meta_description;
     public $meta_keywords;
-    
     public $isEdit = false;
 
     #[Layout('components.layouts.admin')]
@@ -37,7 +33,7 @@ class PostForm extends Component
             
             $this->postId = $post->id;
             $this->title = $post->title;
-            $this->slug = $post->slug; // Data lama dimasukkan ke properti
+            $this->slug = $post->slug;
             $this->type = $post->type;
             $this->content = $post->content;
             $this->existingThumbnail = $post->thumbnail;
@@ -46,7 +42,6 @@ class PostForm extends Component
         }
     }
 
-    // Fungsi otomatis update slug saat judul diketik (hanya jika user belum mengisi slug manual)
     public function updatedTitle($value)
     {
         if (!$this->isEdit) {
@@ -59,7 +54,7 @@ class PostForm extends Component
         $rules = [
             'title' => 'required|min:5',
             'slug'  => 'required|unique:posts,slug,' . ($this->postId ?? 'NULL'),
-            'type'  => 'required|in:berita,pengumuman',
+            'type'  => 'required|in:berita,pengumuman,prestasi', // Ditambahkan 'prestasi'
             'content' => 'required',
             'thumbnail' => $this->isEdit ? 'nullable|image|max:2048' : 'required|image|max:2048',
         ];
@@ -68,7 +63,7 @@ class PostForm extends Component
 
         $data = [
             'title'   => $this->title,
-            'slug'    => Str::slug($this->slug), // Memastikan format slug tetap benar
+            'slug'    => Str::slug($this->slug),
             'type'    => $this->type,
             'content' => $this->content,
             'meta_description' => $this->meta_description,
@@ -76,8 +71,7 @@ class PostForm extends Component
         ];
 
         if ($this->thumbnail) {
-            // Hapus foto lama jika ada
-            if ($this->isEdit && $this->existingThumbnail) {
+            if ($this->isEdit && $this->existingThumbnail && Storage::disk('public')->exists($this->existingThumbnail)) {
                 Storage::disk('public')->delete($this->existingThumbnail);
             }
             $data['thumbnail'] = $this->thumbnail->store('thumbnails', 'public');

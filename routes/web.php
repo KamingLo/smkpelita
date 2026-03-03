@@ -24,9 +24,6 @@ Route::get('/', function () {
     return view('public.welcome', compact('posts'));
 });
 
-Route::get('/verify-email', [VerifyController::class, 'verify'])->name('verify.email');
-Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/password-reset', [ForgotPasswordController::class, 'updatePassword'])->name('password.update.process');
 Route::get('/profil', function(){
     return view('public.profile');
 });
@@ -35,15 +32,27 @@ Route::get('/admisi', function(){
     return view('public.admissions');
 });
 
+Route::get('/galeri', function(){
+    return view('public.galery');
+});
+
 Route::get('/fasilitas', function(){
     return view('public.facility');
 });
+
+Route::get('/verify-email', [VerifyController::class, 'verify'])->name('verify.email');
+Route::get('/password-reset/{token}', [ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/password-reset', [ForgotPasswordController::class, 'updatePassword'])->name('password.update.process');
+
 
 Route::get('/berita', [BlogController::class, 'index'])->name('public.berita.index');
 Route::get('/berita/{slug}', [BlogController::class, 'show'])->name('public.berita.show');
 
 Route::get('/pengumuman', [BlogController::class, 'index'])->name('public.pengumuman.index');
 Route::get('/pengumuman/{slug}', [BlogController::class, 'show'])->name('public.pengumuman.show');
+
+Route::get('/prestasi', [BlogController::class, 'index'])->name('public.pengumuman.index');
+Route::get('/prestasi/{slug}', [BlogController::class, 'show'])->name('public.pengumuman.show');
 
 Route::get('/jurusan/{slug}', [DepartmentController::class, 'show'])->name('public.department.show');
 

@@ -11,11 +11,13 @@ class Navbar extends Component
 
     public $navItems = [
         'Beranda' => '/',
-        'Jurusan' => [
+        'Keahlian' => [
             'Desain Komunikasi Visual' => '/jurusan/desain-komunikasi-visual',
             'Akuntansi Keuangan' => '/jurusan/akuntansi-keuangan',
             'Manajemen Perkantoran' => '/jurusan/manajemen-perkantoran',
         ],
+        'Prestasi' => '/prestasi',
+        'Galeri' => '/galeri',
         'Fasilitas' => '/fasilitas',
         'Postingan' => [
             'Berita' => '/berita',

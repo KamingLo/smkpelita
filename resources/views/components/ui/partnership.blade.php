@@ -1,8 +1,8 @@
 <section class="mb-32" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-6">
-        <h4 class="text-center text-slate-500 font-bold uppercase tracking-widest text-sm mb-12">
-            Bekerja Sama Dengan
-        </h4>
+        <h2 class="text-center text-slate-500 font-bold uppercase text-lg mb-12">
+           Mitra Industri dan Perguruan tinggi mitra SMK Pelita IV
+        </h2>
         
         <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             @php

@@ -21,14 +21,18 @@ class Post extends Model
 
     public function getUrlAttribute()
     {
-        // Sesuaikan prefix 'berita' atau 'pengumuman' berdasarkan field 'type'
-        $prefix = $this->type === 'berita' ? 'berita' : 'pengumuman';
+        // Menentukan prefix berdasarkan type. 
+        // Jika type 'prestasi', maka prefix jadi 'prestasi'.
+        $prefix = match($this->type) {
+            'berita' => 'berita',
+            'pengumuman' => 'pengumuman',
+            'prestasi' => 'prestasi',
+            default => 'post',
+        };
         
-        // Pastikan Anda sudah memiliki route yang sesuai di web.php
         return url("/{$prefix}/{$this->slug}");
     }
 
-    // Opsional: Untuk statistik mingguan nanti
     public function views()
     {
         return $this->hasMany(PostView::class);

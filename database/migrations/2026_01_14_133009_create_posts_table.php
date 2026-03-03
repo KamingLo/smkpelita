@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void{
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['berita', 'pengumuman'])->default('berita');
+            $table->enum('type', ['berita', 'pengumuman', 'prestasi'])->default('berita');
             $table->string('thumbnail')->nullable();
             $table->string('title');
             $table->string('slug')->unique(); // Manual input validasi unik

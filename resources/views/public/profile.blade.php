@@ -4,8 +4,8 @@
 
     <x-ui.hero-banner
         img="image/assets/dkv.jpg"
-        title="Profil SMK PELITA IV"
-        desc="Membangun generasi emas dengan kurikulum berbasis industri dan teknologi terkini."
+        title="PROFIL SMK PELITA IV"
+        desc="Sekolah Berbasis Tiga Bahasa (Trilingual School)"
     />
 
     <x-sections.philosophy />

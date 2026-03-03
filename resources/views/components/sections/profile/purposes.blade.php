@@ -1,6 +1,6 @@
 <div class="mb-32 mt-16" data-aos="fade-up">
         
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 max-w-7xl mx-auto px-6 items-start">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
         
         <div class="lg:col-span-6">
             <span class="text-blue-600 font-bold tracking-[0.2em] uppercase text-[11px] mb-4 block">Filosofi Pendidikan</span>
