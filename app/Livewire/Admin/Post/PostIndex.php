@@ -9,7 +9,6 @@ use Livewire\Attributes\Layout;
 class PostIndex extends Component
 {
     use WithPagination;
-
     public $search = '';
 
     #[Layout('components.layouts.admin')]

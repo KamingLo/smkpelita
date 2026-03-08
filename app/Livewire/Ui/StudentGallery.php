@@ -17,7 +17,6 @@ class StudentGallery extends Component
                 return [
                     'title' => $item->title,
                     'desc'  => $item->description,
-                    // Karena di DB hanya nama file, kita arahkan path ke folder galeri
                     'img'   => asset('storage/uploads/galeri/' . $item->image),
                 ];
             });

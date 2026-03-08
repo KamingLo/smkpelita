@@ -27,9 +27,13 @@
                 >
                     <img :src="item.img" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" :alt="item.title">
                     
-                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-90"></div>
+                    
+                    <div class="absolute inset-0 flex flex-col justify-end p-8">
                         <h4 class="text-white font-bold text-xl mb-2" x-text="item.title"></h4>
                         <p class="text-white/80 text-sm line-clamp-2" x-text="item.desc"></p>
+                        
+                        <div class="h-1 w-0 group-hover:w-12 bg-blue-500 transition-all duration-500 rounded-full mt-4"></div>
                     </div>
                 </div>
             </template>

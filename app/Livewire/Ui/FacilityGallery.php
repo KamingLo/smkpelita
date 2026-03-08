@@ -19,7 +19,6 @@ class FacilityGallery extends Component
                     'title' => $item->title,
                     'cat'   => $item->category,
                     'desc'  => $item->description,
-                    // Mengarahkan ke public/storage/uploads/galeri/
                     'img'   => asset('storage/uploads/galeri/' . $item->image),
                 ];
             });
