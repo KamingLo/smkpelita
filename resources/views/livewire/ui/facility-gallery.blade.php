@@ -11,17 +11,17 @@
 }" class="w-full py-20 bg-[#fafafa] font-sans">
     
     <div class="max-w-7xl mx-auto px-6 mb-16 text-center" data-aos="fade-up">
-        <p class="text-blue-600 font-bold tracking-[0.3em] text-[10px] uppercase mb-4">Campus Experience</p>
-        <h2 class="text-4xl md:text-6xl font-medium text-slate-900 tracking-tight mb-8">
+        <p class="text-blue-600 font-bold text-[10px] uppercase mb-4">Campus Experience</p>
+        <h2 class="text-4xl md:text-6xl font-medium text-slate-900 mb-8">
             Fasilitas & Sarana
         </h2>
         
         <div class="flex flex-wrap justify-center gap-3">
-            <template x-for="cat in ['Semua', 'Akademik', 'Olahraga', 'Kreativitas', 'Fasilitas']">
+            <template x-for="cat in @js($categories)">
                 <button 
                     @click="activeCategory = cat"
                     :class="activeCategory === cat ? 'bg-blue-600/70 text-white' : 'bg-white text-slate-500 border border-slate-100 hover:border-slate-300'"
-                    class="px-8 py-3 rounded-2xl text-[11px] font-bold uppercase tracking-wider transition-all duration-300"
+                    class="px-8 py-3 rounded-2xl text-[11px] font-bold uppercase transition-all duration-300"
                     x-text="cat"
                 ></button>
             </template>
@@ -30,7 +30,7 @@
 
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <template x-for="(item, index) in filteredFacilities" :key="item.title + index">
+            <template x-for="(item, index) in filteredFacilities" :key="index">
                 <div 
                     @click="selectedItem = item; showModal = true"
                     class="group relative aspect-[3/2] cursor-pointer overflow-hidden rounded-[2rem] bg-white transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
@@ -40,8 +40,8 @@
                     
                     <div class="absolute inset-0 p-10 flex flex-col justify-end">
                         <div class="transform transition-all duration-500 group-hover:mb-2">
-                            <span class="inline-block px-3 py-1 bg-blue-600/20 backdrop-blur-md border border-blue-400/30 rounded-lg text-[9px] font-bold uppercase tracking-widest text-blue-100 mb-4" x-text="item.cat"></span>
-                            <h4 class="text-2xl font-bold text-white leading-tight mb-2" x-text="item.title"></h4>
+                            <span class="inline-block px-3 py-1 bg-blue-600/20 backdrop-blur-md border border-blue-400/30 rounded-lg text-[9px] font-bold uppercase text-blue-100 mb-4" x-text="item.cat"></span>
+                            <h4 class="text-2xl font-bold text-white mb-2" x-text="item.title"></h4>
                             <div class="h-1 w-0 group-hover:w-12 bg-blue-500 transition-all duration-500 rounded-full"></div>
                         </div>
                     </div>
@@ -69,10 +69,10 @@
                 <div class="mb-auto">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-8 h-[2px] bg-blue-600"></div>
-                        <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest" x-text="selectedItem.cat"></span>
+                        <span class="text-blue-600 font-bold text-[10px] uppercase" x-text="selectedItem.cat"></span>
                     </div>
-                    <h3 class="text-4xl font-black text-slate-900 mb-6 tracking-tight leading-tight" x-text="selectedItem.title"></h3>
-                    <p class="text-slate-500 leading-relaxed text-lg" x-text="selectedItem.desc"></p>
+                    <h3 class="text-4xl font-bold text-slate-900 mb-6" x-text="selectedItem.title"></h3>
+                    <p class="text-slate-500 text-lg" x-text="selectedItem.desc"></p>
                 </div>
                 
                 <div class="mt-12">

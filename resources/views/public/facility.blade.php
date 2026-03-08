@@ -11,5 +11,6 @@
     <x-sections.facility.explanation />
     
     <livewire:ui.facility-gallery />
+    
     <x-sections.facility.maintenance />
 </x-layouts.app>

@@ -16,8 +16,8 @@
             </button>
         </div>
 
-        <div class="flex-shrink-0 flex items-center justify-center px-6 h-28 border-b border-gray-200">
-            <img src="{{ asset('image/logo/logo_pelita_project.png') }}" alt="Logo SMK Pelita" class="h-20 w-auto object-contain">
+        <div class="flex-shrink-0 flex items-center justify-center px-2 h-24 border-b border-gray-200">
+            <img src="{{ asset('image/logo/logo_pelita_project.webp') }}" alt="Logo SMK Pelita" class="h-32 w-auto object-contain">
         </div>
 
         <nav class="flex-1 mt-8 px-4 space-y-1.5 overflow-y-auto custom-scrollbar">
@@ -35,18 +35,24 @@
                 <span>Manajemen Berita</span>
             </x-ui.admin.nav-link>
             
-            {{-- Converter Photo --}}
-            <x-ui.admin.nav-link href="{{ route('tools.converter') }}" :active="request()->routeIs('tools.*')">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h14a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                <span>Converter Photo</span>
-            </x-ui.admin.nav-link>
-            
             {{-- Manajemen Admin - Ikon Banyak User (Group) --}}
             <x-ui.admin.nav-link href="{{ route('users.create')}}" :active="request()->routeIs('users.create')">
                 <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
                 <span>Manajemen Admin</span>
+            </x-ui.admin.nav-link>
+            
+            {{-- Manajemen Galeri --}}
+            <x-ui.admin.nav-link href="{{ route('admin.media.index') }}" :active="request()->routeIs('galleries.*')">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm12 6l-3-3m0 0L9 9m4 0l3-3m0 3v6m-9-9h.01M6 20h12"></path></svg>
+                <span>Manajemen Galeri</span>
+            </x-ui.admin.nav-link>
+
+            {{-- Converter Photo --}}
+            <x-ui.admin.nav-link href="{{ route('tools.converter') }}" :active="request()->routeIs('tools.*')">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h14a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span>Converter Photo</span>
             </x-ui.admin.nav-link>
             
             <div class="pt-4">

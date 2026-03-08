@@ -7,6 +7,8 @@ use App\Livewire\Admin\Post\PostForm;
 use App\Livewire\Admin\Tool\WebpConverter;
 use App\Livewire\Admin\User\CreateUser;
 use App\Livewire\Admin\Profile\UpdateProfile;
+use App\Livewire\Admin\Media\MediaIndex;
+use App\Livewire\Admin\Media\MediaForm;
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\VerifyController;
@@ -51,8 +53,8 @@ Route::get('/berita/{slug}', [BlogController::class, 'show'])->name('public.beri
 Route::get('/pengumuman', [BlogController::class, 'index'])->name('public.pengumuman.index');
 Route::get('/pengumuman/{slug}', [BlogController::class, 'show'])->name('public.pengumuman.show');
 
-Route::get('/prestasi', [BlogController::class, 'index'])->name('public.pengumuman.index');
-Route::get('/prestasi/{slug}', [BlogController::class, 'show'])->name('public.pengumuman.show');
+Route::get('/prestasi', [BlogController::class, 'index'])->name('public.prestasi.index');
+Route::get('/prestasi/{slug}', [BlogController::class, 'show'])->name('public.prestasi.show');
 
 Route::get('/jurusan/{slug}', [DepartmentController::class, 'show'])->name('public.department.show');
 
@@ -68,6 +70,11 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/postingan', PostIndex::class)->name('posts.index');
     Route::get('/postingan/create', PostForm::class)->name('posts.create');
     Route::get('/postingan/edit/{id}', PostForm::class)->name('posts.edit');
+    
+    Route::get('/media', MediaIndex::class)->name('admin.media.index');
+    Route::get('/media/create', MediaForm::class)->name('admin.media.create');
+    Route::get('/media/edit/{id}', MediaForm::class)->name('admin.media.edit');
+    
     Route::get('/converter', WebpConverter::class)->name('tools.converter');
     Route::get('/user', CreateUser::class)->name('users.create');
     
